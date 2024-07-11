@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Mês de Namoro</title>
+    <style>
+        body {
+            background: url('https://lh3.googleusercontent.com/pw/AP1GczPnzxwxQ3zh_G-PmfIA_Hcl8Fm_5Lm0K0TeUSnU-3LDGTPiAIfR1KLfqH4KFNcV4ZxzO1rxGeEBpfDIzuChxWdZZXSkyLkANwB5rmZQVKxgdFbRydzhEuWi4CnSDjAVpYgeKkWI3hOhyAmDmVOYgSZzHxS4CJWLFVdN8cZS6pHvmuZYguEuKb69kvGxdMPLnSs6TdUs7sWb9glG-a6RxAMt1_bFMvSwI_3UgYHeGcLtap3Ahkly45_wMCQUhQjqjt4-zW3yNzlwvZ2LmzUuvVPDJzysZml5NpwPoosJm9Pm4jwhGcVMND5x0fttykg3qA3Gnw93Dl7UwlHEXH9HROw35qfAqBg0kmBK_-w5HArat2RJ2X4g5N-i3S2A31gyvOOdtNit-xXb1v_4YZF0af7x_n3ntT835IcxDhz55DuJRmSEx0rHE3zuCed8gqYGm9oTE-0z0gs4yGOmLk0M0HmaoikMbPTzAKKKok2qm27hm3m2Tow1oeoA7khppZRA4CYXC3wDA8miC5emBDO5r8VOqGB8YcmqaI8-8EWi_EkS791Dg6MydOoVg_aCTdNQLQVELaHxQsizedDhdP58Im0WgUwEUovyzG96P7yboA2UAoBmBZmknV_veMya-E3HhvD7SLqOkp9Jq-mRR1vZ7fpKMASOfaIHm-2CRbpwPnlZK06rKbE7QnjzTfngA1u2S5D5oBlkrsfQzqH_ThxakkddlbbZ_rrt0C4Xfl7U9Ompj9wC5a5BAvWnZ5w_uHHtpzKvVsvUYntUtYdHa4ofl9qxKNOJIcu1tvxlf0vDonUAnY3Pg_RIkYwpB9obVfRdzLtt1U1fUC1g1e2Oij_LfLVvKUCU2nckn7afGBQocN4AXNZa3M61snp3T0RDB97RILLuuoi3SSXJdn0AHz2-_Souogs=w1200-h763-s-no-gm?authuser=0') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #message {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        #albumButton {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #albumButton:hover {
+            background-color: #feb47b;
+        }
+
+        .particle {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 50px;
+            height: 50px;
+            pointer-events: none;
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Mês de Namoro, Vida!</h1>
+        <div id="message">Você é a razão do meu sorriso todos os dias. Te amoo MUITOOOOOOOO! (gostou das flores kkkkkk)</div>
+        <a href="https://www.notion.so/Dia-dos-Namorados-85689107fbdc477888c809ca1a716b23" id="albumButton">Notion do mes</a>
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://www.carlinhosbrown.com.br/wp-content/uploads/2016/03/03-Velha-Infancia-01.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script>
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            const isTulip = Math.random() > 0.5;
+            particle.style.backgroundImage = isTulip ? 'url("https://www.colorblends.com/wp-content/uploads/2020/01/1505_BestPink_CGC9568sqII-1024x1024.jpg")' : 'url("https://www.designi.com.br/images/preview/10001839.jpg")';
+            particle.style.width = `${Math.random() * 40 + 30}px`;
+            particle.style.height = particle.style.width;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            document.body.appendChild(particle);
+
+            particle.addEventListener('animationend', () => {
+                particle.remove();
+            });
+        }
+
+        setInterval(createParticle, 500);
+    </script>
+</body>
+</html>
